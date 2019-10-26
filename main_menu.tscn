@@ -16,26 +16,27 @@ margin_bottom = 1.0
 script = ExtResource( 1 )
 
 [node name="bg" type="Sprite" parent="."]
-position = Vector2( 1146.25, 885.002 )
-scale = Vector2( 47.7482, 36.8205 )
+position = Vector2( 1128.93, 1014.94 )
+scale = Vector2( 47.027, 46.7099 )
 texture = ExtResource( 2 )
 
 [node name="HBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -118.0
-margin_bottom = 94.0
+margin_right = 111.0
+margin_bottom = 120.0
 rect_scale = Vector2( 4, 4 )
 
-[node name="Label" type="Label" parent="HBoxContainer"]
-margin_right = 228.0
+[node name="title" type="Label" parent="HBoxContainer"]
+margin_right = 229.0
 margin_bottom = 22.0
 custom_fonts/font = ExtResource( 3 )
-text = "Arrombado Adventures"
+text = "Teacher plz give me 10"
 
 [node name="play" type="Button" parent="HBoxContainer"]
 margin_top = 26.0
-margin_right = 228.0
+margin_right = 229.0
 margin_bottom = 54.0
 custom_fonts/font = ExtResource( 3 )
 text = "Play"
@@ -43,7 +44,7 @@ icon = ExtResource( 4 )
 
 [node name="settings" type="Button" parent="HBoxContainer"]
 margin_top = 58.0
-margin_right = 228.0
+margin_right = 229.0
 margin_bottom = 88.0
 custom_fonts/font = ExtResource( 3 )
 text = "Settings"
@@ -51,7 +52,7 @@ icon = ExtResource( 5 )
 
 [node name="quit" type="Button" parent="HBoxContainer"]
 margin_top = 92.0
-margin_right = 228.0
+margin_right = 229.0
 margin_bottom = 120.0
 custom_fonts/font = ExtResource( 3 )
 text = "Quit "
