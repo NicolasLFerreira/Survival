@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://main_menu.gd" type="Script" id=1]
+[ext_resource path="res://bg.png" type="Texture" id=2]
+[ext_resource path="res://Minecraftia.tres" type="DynamicFont" id=3]
+[ext_resource path="res://negrosiusblack1.png" type="Texture" id=4]
+[ext_resource path="res://gear.png" type="Texture" id=5]
+[ext_resource path="res://quit-arrow.png" type="Texture" id=6]
+[ext_resource path="res://dark_slime.png" type="Texture" id=7]
+
+[node name="main_menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -796.0
+margin_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="bg" type="Sprite" parent="."]
+position = Vector2( 1146.25, 885.002 )
+scale = Vector2( 47.7482, 36.8205 )
+texture = ExtResource( 2 )
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -118.0
+margin_bottom = 94.0
+rect_scale = Vector2( 4, 4 )
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+margin_right = 228.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 3 )
+text = "Arrombado Adventures"
+
+[node name="play" type="Button" parent="HBoxContainer"]
+margin_top = 26.0
+margin_right = 228.0
+margin_bottom = 54.0
+custom_fonts/font = ExtResource( 3 )
+text = "Play"
+icon = ExtResource( 4 )
+
+[node name="settings" type="Button" parent="HBoxContainer"]
+margin_top = 58.0
+margin_right = 228.0
+margin_bottom = 88.0
+custom_fonts/font = ExtResource( 3 )
+text = "Settings"
+icon = ExtResource( 5 )
+
+[node name="quit" type="Button" parent="HBoxContainer"]
+margin_top = 92.0
+margin_right = 228.0
+margin_bottom = 120.0
+custom_fonts/font = ExtResource( 3 )
+text = "Quit "
+icon = ExtResource( 6 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 1920.01, 1079.05 )
+scale = Vector2( -0.00142914, 0.0029498 )
+texture = ExtResource( 7 )
+[connection signal="pressed" from="HBoxContainer/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="HBoxContainer/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="HBoxContainer/quit" to="." method="_on_quit_pressed"]
