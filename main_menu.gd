@@ -9,6 +9,12 @@ func _on_settings_pressed():
 func _on_quit_pressed():
 	get_tree().quit()
 
+func _on_wardrobe_pressed():
+	get_tree().change_scene("res://wardrobe.tscn")
+
+func _on_tutorial_pressed():
+	get_tree().change_scene("res://tutorial.tscn")
+
 func _physics_process(delta): 
 	if Input.is_action_just_pressed("esc"):
 		get_tree().quit()

@@ -25,7 +25,7 @@ window/size/width=1920
 window/size/height=1080
 window/size/test_width=1920
 window/size/test_height=1080
-window/stretch/mode="viewport"
+window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
 [input]
@@ -90,6 +90,11 @@ op={
 stop={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":72,"unicode":0,"echo":false,"script":null)
+ ]
+}
+flydown={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":76,"unicode":0,"echo":false,"script":null)
  ]
 }
 esc={

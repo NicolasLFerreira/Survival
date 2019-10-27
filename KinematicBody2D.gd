@@ -73,13 +73,13 @@ func getinput():
 	else:
 		spd = 125
 		spd_m = 750
-		jp_f = -820
+		jp_f = -800
 		jp = false
 		shift = false
 	
 	
 	if power == 100 and Input.is_action_pressed("power"):
-		vector.y = -925
+		vector.y = -775
 		power = 0
 	
 
