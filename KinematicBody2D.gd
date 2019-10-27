@@ -5,14 +5,10 @@ extends KinematicBody2D
 var vector = Vector2()
 var g = 30
 
-#GUI
-
-var cheating = false
-
 #Movement
 
-var spd = 75
-var spd_m = 750
+var spd = 300
+var spd_m = 700
 var spd_s = 115
 var spd_sm = 1150
 var jp_f = 1
@@ -57,8 +53,8 @@ func getinput():
 	else:
 		vector.x = 0
 	
-	if Input.is_action_pressed("op") and cheating == true:
-		vector.y = -500
+	if Input.is_action_pressed("op"):
+		vector.y = -400
 	
 	#Jumping
 	
@@ -75,15 +71,15 @@ func getinput():
 		jp = true
 		shift = true
 	else:
-		spd = 50
+		spd = 125
 		spd_m = 750
-		jp_f = -800
+		jp_f = -820
 		jp = false
 		shift = false
 	
 	
 	if power == 100 and Input.is_action_pressed("power"):
-		vector.y = -800
+		vector.y = -925
 		power = 0
 	
 

@@ -1,8 +1,10 @@
-[gd_resource type="TileSet" load_steps=8 format=2]
+[gd_resource type="TileSet" load_steps=11 format=2]
 
 [ext_resource path="res://tile_set_dirt.png" type="Texture" id=1]
 [ext_resource path="res://images.jpg" type="Texture" id=2]
 [ext_resource path="res://padoru.png" type="Texture" id=3]
+[ext_resource path="res://stone.png" type="Texture" id=4]
+[ext_resource path="res://spikes1.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -11,6 +13,9 @@
 [sub_resource type="RectangleShape2D" id=4]
 
 [sub_resource type="RectangleShape2D" id=2]
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 1.0063, -7.9937, 7.9826, 5.99277, 7.9826, 8.0247, -7.0537, 7.99084, -6.98597, 5.99277, -0.0435295, -7.9937 )
 
 [resource]
 0/name = "edge_1"
@@ -785,3 +790,35 @@
 "shape_transform": Transform2D( 0.8, 0, 0, 0.8, 8, 8 )
 } ]
 48/z_index = 0
+49/name = "stone"
+49/texture = ExtResource( 4 )
+49/tex_offset = Vector2( 0, 0 )
+49/modulate = Color( 1, 1, 1, 1 )
+49/region = Rect2( 0, 48, 16, 16 )
+49/tile_mode = 0
+49/occluder_offset = Vector2( 8, 8 )
+49/navigation_offset = Vector2( 8, 8 )
+49/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 0.8, 0, 0, 0.8, 8, 8 )
+} ]
+49/z_index = 0
+50/name = "spikes"
+50/texture = ExtResource( 5 )
+50/tex_offset = Vector2( 0, 0 )
+50/modulate = Color( 1, 1, 1, 1 )
+50/region = Rect2( 0, 0, 15, 16 )
+50/tile_mode = 0
+50/occluder_offset = Vector2( 7.5, 8 )
+50/navigation_offset = Vector2( 7.5, 8 )
+50/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 7.5, 8 )
+} ]
+50/z_index = 0

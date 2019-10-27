@@ -10,3 +10,6 @@ func _physics_process(delta):
 	if Input.is_action_just_released("restart"):
 		get_tree().reload_current_scene()
 	
+
+func _on_spikes_body_entered(body):
+	get_tree().reload_current_scene()
