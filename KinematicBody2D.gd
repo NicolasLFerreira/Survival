@@ -68,7 +68,7 @@ func getinput():
 	
 	#Jumping
 	
-	if is_on_floor() and jump and stm > 10:
+	if is_on_floor() and jump and stm >= 10:
 		vector.y = jp_f
 		if jp:
 			stm -= 10
