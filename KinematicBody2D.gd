@@ -12,27 +12,31 @@ var spd_m = 700
 var spd_s = 115
 var spd_sm = 1150
 var jp_f = 1
-var stm = 100
 
 #Stamina control
 
+var stm = 100
 var stm_r = 1
-var stm_cap = 100
-var stm_l = 1
+var stm_l = 2
 
-#power
+#Power
 
 var power = 0
 
-
-#bools
+#Bools
 
 var shift = false
 var jp = false
 var power_t = false
 
+#Input
+
+var jump = false
+var left = false
+var right = false
+
 func _process(delta):
-	if Input.is_action_pressed("right") and vector.y <= 30 or Input.is_action_pressed("left") and vector.y <= 30:
+	if (right and vector.y <= 30) or (left and vector.y <= 30):
 		$player_sprite.play("run")
 	else:
 		$player_sprite.play("idle")
@@ -41,13 +45,19 @@ func _process(delta):
 	
 	$player_camera/status/statusbox/power_level.set_text("Power Level: " + str(power))
 	
+
 func getinput():
+	jump = Input.is_action_pressed("jump")
+	left = Input.is_action_pressed("left")
+	right = Input.is_action_pressed("right")
+	shift = Input.is_action_pressed("shift")
+	
 	#Walking and Running
-	if Input.is_action_pressed("left"):
+	
+	if left:
 		vector.x = max(vector.x-spd, -spd_m)
 		$player_sprite.flip_h = true
-		
-	elif Input.is_action_pressed("right"):
+	elif right:
 		vector.x = min(vector.x+spd, +spd_m)
 		$player_sprite.flip_h = false
 	else:
@@ -58,28 +68,26 @@ func getinput():
 	
 	#Jumping
 	
-	if is_on_floor() and Input.is_action_pressed("jump") and stm > 10:
+	if is_on_floor() and jump and stm > 10:
 		vector.y = jp_f
-		if jp == true:
+		if jp:
 			stm -= 10
+	
 	#stm
 	
-	if Input.is_action_pressed("sprint") and stm >= 1:
+	if shift and stm >= 1:
 		spd = spd_s
 		spd_m = spd_sm
 		jp_f = -950
 		jp = true
-		shift = true
 	else:
 		spd = 125
 		spd_m = 750
-		jp_f = -800
+		jp_f = -780
 		jp = false
-		shift = false
-	
 	
 	if power == 100 and Input.is_action_pressed("power"):
-		vector.y = -775
+		vector.y = -750
 		power = 0
 	
 
@@ -91,20 +99,20 @@ func _physics_process(delta):
 	if not is_on_floor():
 		vector.y += g
 
-func _on_stmregen_timeout():
-	
-	if  stm < stm_cap and shift == false and not Input.is_action_pressed("right") or stm < stm_cap and shift == false and not Input.is_action_pressed("left") or stm < stm_cap and shift == false and not Input.is_action_pressed("jump"):
-		stm += stm_r
-	
-	if not Input.is_action_pressed("left") and not Input.is_action_pressed("right"):
-		stm_l = 0
-	elif shift == true and Input.is_action_pressed("left") or shift == true and Input.is_action_pressed("right") or shift == true and Input.is_action_pressed("jump"):
-		stm_l = 1
-
-func _on_stmloss_timeout():
-	if stm > 0:
-		stm -= stm_l
-
 func _on_powergen_timeout():
 	if power < 100:
 		power += 10
+	
+
+func _on_stmregen_timeout():
+	if (!left or !right) and stm < 100:
+		if !shift:
+			stm += stm_r
+	else:
+		pass
+
+func _on_stmloss_timeout():
+	
+	if (left or right) and stm > 1:
+		if shift:
+			stm -= stm_l

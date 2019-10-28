@@ -111,11 +111,11 @@ __meta__ = {
 }
 
 [node name="stmregen" type="Timer" parent="player"]
-wait_time = 0.1
+wait_time = 0.12
 autostart = true
 
 [node name="stmloss" type="Timer" parent="player"]
-wait_time = 0.08
+wait_time = 0.25
 autostart = true
 
 [node name="djump" type="Timer" parent="player"]
