@@ -822,3 +822,13 @@ points = PoolVector2Array( 1.0063, -7.9937, 7.9826, 5.99277, 7.9826, 8.0247, -7.
 "shape_transform": Transform2D( 1, 0, 0, 1, 7.5, 8 )
 } ]
 50/z_index = 0
+51/name = "stone_trap"
+51/texture = ExtResource( 4 )
+51/tex_offset = Vector2( 0, 0 )
+51/modulate = Color( 1, 1, 1, 1 )
+51/region = Rect2( 0, 48, 16, 16 )
+51/tile_mode = 0
+51/occluder_offset = Vector2( 8, 8 )
+51/navigation_offset = Vector2( 8, 8 )
+51/shapes = [  ]
+51/z_index = 0

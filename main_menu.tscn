@@ -1,14 +1,13 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://main_menu.gd" type="Script" id=1]
 [ext_resource path="res://bg.png" type="Texture" id=2]
-[ext_resource path="res://dark_slime.png" type="Texture" id=3]
-[ext_resource path="res://Minecraftia.tres" type="DynamicFont" id=4]
-[ext_resource path="res://negrosiusblack1.png" type="Texture" id=5]
-[ext_resource path="res://gear.png" type="Texture" id=6]
-[ext_resource path="res://wardrobe.png" type="Texture" id=7]
-[ext_resource path="res://spikes2.png" type="Texture" id=8]
-[ext_resource path="res://quit-arrow.png" type="Texture" id=9]
+[ext_resource path="res://Minecraftia.tres" type="DynamicFont" id=3]
+[ext_resource path="res://negrosiusblack1.png" type="Texture" id=4]
+[ext_resource path="res://gear.png" type="Texture" id=5]
+[ext_resource path="res://wardrobe.png" type="Texture" id=6]
+[ext_resource path="res://spikes2.png" type="Texture" id=7]
+[ext_resource path="res://quit-arrow.png" type="Texture" id=8]
 
 [node name="main_menu" type="Control"]
 anchor_right = 1.0
@@ -21,11 +20,6 @@ script = ExtResource( 1 )
 position = Vector2( 1128.93, 1014.94 )
 scale = Vector2( 47.027, 46.7099 )
 texture = ExtResource( 2 )
-
-[node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 1920.01, 1079.05 )
-scale = Vector2( -0.00142914, 0.0029498 )
-texture = ExtResource( 3 )
 
 [node name="maingui" type="Control" parent="."]
 margin_top = -102.0
@@ -44,32 +38,32 @@ rect_scale = Vector2( 4, 4 )
 [node name="title" type="Label" parent="maingui/vbox"]
 margin_right = 229.0
 margin_bottom = 22.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 text = "Teacher plz give me 10"
 
 [node name="play" type="Button" parent="maingui/vbox"]
 margin_top = 26.0
 margin_right = 229.0
 margin_bottom = 54.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 text = "Play"
-icon = ExtResource( 5 )
+icon = ExtResource( 4 )
 
 [node name="settings" type="Button" parent="maingui/vbox"]
 margin_top = 58.0
 margin_right = 229.0
 margin_bottom = 88.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 text = "Settings"
-icon = ExtResource( 6 )
+icon = ExtResource( 5 )
 
 [node name="wardrobe" type="Button" parent="maingui/vbox"]
 margin_top = 92.0
 margin_right = 229.0
 margin_bottom = 120.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 text = "Wardrobe"
-icon = ExtResource( 7 )
+icon = ExtResource( 6 )
 
 [node name="secondgui" type="Control" parent="."]
 margin_left = 997.0
@@ -85,17 +79,17 @@ rect_scale = Vector2( 4, 4 )
 [node name="tutorial" type="Button" parent="secondgui/vbox2"]
 margin_right = 231.0
 margin_bottom = 28.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 text = "Tutorial"
-icon = ExtResource( 8 )
+icon = ExtResource( 7 )
 
 [node name="quit" type="Button" parent="secondgui/vbox2"]
 margin_top = 32.0
 margin_right = 231.0
 margin_bottom = 60.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 text = "Quit "
-icon = ExtResource( 9 )
+icon = ExtResource( 8 )
 [connection signal="pressed" from="maingui/vbox/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="maingui/vbox/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="maingui/vbox/wardrobe" to="." method="_on_wardrobe_pressed"]

@@ -10,3 +10,6 @@ func _physics_process(delta):
 
 func _on_spikes_body_entered(body):
 	get_tree().reload_current_scene()
+
+func _on_spikes6_body_entered(body):
+	get_tree().reload_current_scene()

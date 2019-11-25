@@ -35,6 +35,13 @@ var jump = false
 var left = false
 var right = false
 
+#Op
+
+var g_zero = false
+var op = false
+var slow = false
+var sm = 125
+
 func _process(delta):
 	if (right and vector.y <= 30) or (left and vector.y <= 30):
 		$player_sprite.play("run")
@@ -51,6 +58,8 @@ func getinput():
 	left = Input.is_action_pressed("left")
 	right = Input.is_action_pressed("right")
 	shift = Input.is_action_pressed("shift")
+	g_zero = Input.is_action_pressed("g_zero")
+	op = Input.is_action_pressed("op")
 	
 	#Walking and Running
 	
@@ -62,9 +71,6 @@ func getinput():
 		$player_sprite.flip_h = false
 	else:
 		vector.x = 0
-	
-	if Input.is_action_pressed("op"):
-		vector.y = -400
 	
 	#Jumping
 	
@@ -81,7 +87,7 @@ func getinput():
 		jp_f = -1000
 		jp = true
 	else:
-		spd = 125
+		spd = sm
 		spd_m = 750
 		jp_f = -775
 		jp = false
@@ -89,6 +95,17 @@ func getinput():
 	if power == 100 and Input.is_action_pressed("power"):
 		vector.y = -750
 		power = 0
+	
+	#Op
+	
+	if g_zero:
+		g = 0
+	else:
+		g = 30
+	
+	if op:
+		vector.y = jp_f
+	
 	
 
 func _physics_process(delta):
