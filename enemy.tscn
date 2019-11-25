@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://enemy.gd" type="Script" id=1]
+[ext_resource path="res://dark_slime.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 6.50266, 5.52821 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="enemy" type="KinematicBody2D" parent="."]
+scale = Vector2( 4, 4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="e_sprite" type="Sprite" parent="enemy"]
+texture = ExtResource( 2 )
+
+[node name="e_collision" type="CollisionShape2D" parent="enemy"]
+position = Vector2( -0.527765, 2.50688 )
+shape = SubResource( 1 )

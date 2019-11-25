@@ -1,22 +1,23 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://player.gd" type="Script" id=1]
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=2]
 [ext_resource path="res://Minecraftia.tres" type="DynamicFont" id=3]
 [ext_resource path="res://quit-arrow.png" type="Texture" id=4]
-[ext_resource path="res://negrosiusblack1.png" type="Texture" id=5]
-[ext_resource path="res://negrosiusblack2.png" type="Texture" id=6]
-[ext_resource path="res://negrosiusblack3.png" type="Texture" id=7]
-[ext_resource path="res://negrosiusblack4.png" type="Texture" id=8]
+[ext_resource path="res://pause.png" type="Texture" id=5]
+[ext_resource path="res://negrosiusblack1.png" type="Texture" id=6]
+[ext_resource path="res://negrosiusblack2.png" type="Texture" id=7]
+[ext_resource path="res://negrosiusblack3.png" type="Texture" id=8]
+[ext_resource path="res://negrosiusblack4.png" type="Texture" id=9]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "run",
 "speed": 10.0
@@ -66,6 +67,23 @@ margin_bottom = 40.0
 custom_fonts/font = ExtResource( 3 )
 text = "Quit"
 icon = ExtResource( 4 )
+
+[node name="pause" type="Button" parent="player/player_camera/menub/menubox"]
+margin_left = 158.0
+margin_right = 248.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 3 )
+text = "Pause"
+icon = ExtResource( 5 )
+
+[node name="pause_pop" type="Popup" parent="player/player_camera/menub/menubox"]
+margin_left = 158.0
+margin_right = 198.0
+margin_bottom = 40.0
+
+[node name="unpause" type="Button" parent="player/player_camera/menub/menubox/pause_pop"]
+margin_right = 12.0
+margin_bottom = 20.0
 
 [node name="status" type="Control" parent="player/player_camera"]
 margin_right = 40.0
@@ -127,6 +145,8 @@ wait_time = 0.4
 autostart = true
 [connection signal="pressed" from="player/player_camera/menub/menubox/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="player/player_camera/menub/menubox/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="player/player_camera/menub/menubox/pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="player/player_camera/menub/menubox/pause_pop/unpause" to="." method="_on_unpause_pressed"]
 [connection signal="timeout" from="player/stmregen" to="player" method="_on_stmregen_timeout"]
 [connection signal="timeout" from="player/stmloss" to="player" method="_on_stmloss_timeout"]
 [connection signal="timeout" from="player/djump" to="player" method="_on_djump_timeout"]
