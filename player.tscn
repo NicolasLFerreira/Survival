@@ -123,7 +123,7 @@ wait_time = 0.3
 one_shot = true
 
 [node name="powergen" type="Timer" parent="player"]
-wait_time = 0.6
+wait_time = 0.4
 autostart = true
 [connection signal="pressed" from="player/player_camera/menub/menubox/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="player/player_camera/menub/menubox/quit" to="." method="_on_quit_pressed"]

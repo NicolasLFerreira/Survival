@@ -68,22 +68,22 @@ func getinput():
 	
 	#Jumping
 	
-	if is_on_floor() and jump and stm >= 10:
+	if is_on_floor() and jump and stm >= 5:
 		vector.y = jp_f
 		if jp:
-			stm -= 10
+			stm -= 5
 	
 	#stm
 	
 	if shift and stm >= 1:
 		spd = spd_s
 		spd_m = spd_sm
-		jp_f = -950
+		jp_f = -1000
 		jp = true
 	else:
 		spd = 125
 		spd_m = 750
-		jp_f = -780
+		jp_f = -775
 		jp = false
 	
 	if power == 100 and Input.is_action_pressed("power"):
