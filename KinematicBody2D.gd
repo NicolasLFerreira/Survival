@@ -10,7 +10,7 @@ var g = 30
 var spd = 300
 var spd_m = 700
 var spd_s = 115
-var spd_sm = 1150
+var spd_sm = 1000
 var jp_f = 1
 
 #Stamina control
@@ -40,7 +40,8 @@ var right = false
 var g_zero = false
 var op = false
 var slow = false
-var sm = 125
+var s = 1
+var sm = 1
 
 func _process(delta):
 	if (right and vector.y <= 30) or (left and vector.y <= 30):
@@ -60,6 +61,7 @@ func getinput():
 	shift = Input.is_action_pressed("shift")
 	g_zero = Input.is_action_pressed("g_zero")
 	op = Input.is_action_pressed("op")
+	slow = Input.is_action_pressed("slow")
 	
 	#Walking and Running
 	
@@ -106,7 +108,12 @@ func getinput():
 	if op:
 		vector.y = jp_f
 	
-	
+	if slow:
+		s = 1
+		sm = 1
+	else:
+		s = 300
+		sm = 700
 
 func _physics_process(delta):
 	
