@@ -1,6 +1,4 @@
 extends Node2D
 
-var spike = false
-
-func _on_spikearea_area_entered(area):
-	spike = true
+func _on_cu_body_entered(body):
+	get_tree().reload_current_scene()
